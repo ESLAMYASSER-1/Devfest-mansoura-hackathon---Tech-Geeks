@@ -1,3 +1,4 @@
+import '../timer_page/timer_page_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -36,6 +37,9 @@ class _TaskListPageWidgetState extends State<TaskListPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    String task_1_text= "learn version control using git and git hub";
+    String task_2_text= 'Training Linear Model for housing in california ';
+    String task_3_text= "Make SOme progress in data preprocessing and cleaning";
     if (isiOS) {
       SystemChrome.setSystemUIOverlayStyle(
         SystemUiOverlayStyle(
@@ -70,7 +74,7 @@ class _TaskListPageWidgetState extends State<TaskListPageWidget> {
             },
           ),
           title: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
             child: Text(
               'TASKS List',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -158,7 +162,7 @@ class _TaskListPageWidgetState extends State<TaskListPageWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Hello World',
+                                    'Task 1',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -194,7 +198,7 @@ class _TaskListPageWidgetState extends State<TaskListPageWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     30.0, 30.0, 30.0, 30.0),
                                 child: Text(
-                                  'learn version control using git and git hub ',
+                                  task_1_text,
                                   style:
                                       FlutterFlowTheme.of(context).bodyMedium,
                                 ),
@@ -205,14 +209,45 @@ class _TaskListPageWidgetState extends State<TaskListPageWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             FFButtonWidget(
                               onPressed: () {
-                                print('Button pressed ...');
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => TimerPageWidget(taskText: task_1_text),
+                                  ),
+                                );
+                              },
+                              text: 'Start',
+                              options: FFButtonOptions(
+                                height: 40.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 0.0, 24.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).primary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                  fontFamily: 'Readex Pro',
+                                  color: Colors.white,
+                                ),
+                                elevation: 3.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                            FFButtonWidget(
+                              onPressed: () {
+                                print("pressed");
                               },
                               text: 'Remove',
                               options: FFButtonOptions(
@@ -289,7 +324,7 @@ class _TaskListPageWidgetState extends State<TaskListPageWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Hello World',
+                                    'Task 2',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -325,7 +360,7 @@ class _TaskListPageWidgetState extends State<TaskListPageWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     30.0, 30.0, 30.0, 30.0),
                                 child: Text(
-                                  'Training Linear Model for housing in california ',
+                                  task_3_text,
                                   style:
                                       FlutterFlowTheme.of(context).bodyMedium,
                                 ),
@@ -336,11 +371,42 @@ class _TaskListPageWidgetState extends State<TaskListPageWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+                            FFButtonWidget(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => TimerPageWidget(taskText: task_2_text),
+                                  ),
+                                );
+                              },
+                              text: 'Start',
+                              options: FFButtonOptions(
+                                height: 40.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 0.0, 24.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).primary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                  fontFamily: 'Readex Pro',
+                                  color: Colors.white,
+                                ),
+                                elevation: 3.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
                             FFButtonWidget(
                               onPressed: () {
                                 print('Button pressed ...');
@@ -420,7 +486,7 @@ class _TaskListPageWidgetState extends State<TaskListPageWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Hello World',
+                                    'Task 3',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -456,7 +522,7 @@ class _TaskListPageWidgetState extends State<TaskListPageWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     30.0, 30.0, 30.0, 30.0),
                                 child: Text(
-                                  'Make SOme progress in data preprocessing and cleaning ',
+                                  task_3_text,
                                   style:
                                       FlutterFlowTheme.of(context).bodyMedium,
                                 ),
@@ -467,11 +533,42 @@ class _TaskListPageWidgetState extends State<TaskListPageWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+                            FFButtonWidget(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => TimerPageWidget(taskText: task_3_text),
+                                  ),
+                                );
+                              },
+                              text: 'Start',
+                              options: FFButtonOptions(
+                                height: 40.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 0.0, 24.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).primary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                  fontFamily: 'Readex Pro',
+                                  color: Colors.white,
+                                ),
+                                elevation: 3.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
                             FFButtonWidget(
                               onPressed: () {
                                 print('Button pressed ...');

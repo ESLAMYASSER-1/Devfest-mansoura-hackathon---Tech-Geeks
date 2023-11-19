@@ -11,8 +11,10 @@ import 'package:provider/provider.dart';
 import 'timer_page_model.dart';
 export 'timer_page_model.dart';
 
+int yesCount= 1;
+
 class TimerPageWidget extends StatefulWidget {
-  const TimerPageWidget({Key? key}) : super(key: key);
+  const TimerPageWidget({Key? key,  taskText}) : super(key: key);
 
   @override
   _TimerPageWidgetState createState() => _TimerPageWidgetState();
@@ -143,6 +145,44 @@ class _TimerPageWidgetState extends State<TimerPageWidget> {
                       _model.timerValue = displayTime;
                       if (shouldUpdate) setState(() {});
                     },
+                    onEnded: () async {
+                      var confirmDialogResponse = await showDialog<bool>(
+                        context: context,
+                        builder: (alertDialogContext) {
+                          return AlertDialog(
+                            title: Text('FeedBack'),
+                            content: Text('Did You Get distracted'),
+                            actions: [
+                              TextButton(
+                                onPressed: () => Navigator.pop(
+                                    alertDialogContext, false),
+
+                                child: Text('NO'),
+                              ),
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext, true),
+                                child: Text('YES'),
+                              ),
+                            ],
+                          );
+                        },
+                      ) ??
+                          false;
+                      if (confirmDialogResponse) {
+                        // Execute this block if the user response is true (YES)
+                        print("yes");
+                        initialTime: _model.timerMilliseconds;
+                        _model.timerController.onResetTimer();
+                        _model.timerController.onStartTimer();
+                        yesCount= yesCount+1;
+                      } else {
+                        // Execute this block if the user response is false (NO)
+                        print("NO");
+                        _model.timerController.onResetTimer();
+                        _model.timerController.onStartTimer();
+                      }
+                    },
                     textAlign: TextAlign.start,
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Outfit',
@@ -177,7 +217,7 @@ class _TimerPageWidgetState extends State<TimerPageWidget> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      'Hello World',
+                                      'Task',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -213,7 +253,7 @@ class _TimerPageWidgetState extends State<TimerPageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       30.0, 30.0, 30.0, 30.0),
                                   child: Text(
-                                    'learn version control using git and git hub ',
+                                    "learn version control using git and git hub",
                                     style:
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   ),
@@ -234,7 +274,8 @@ class _TimerPageWidgetState extends State<TimerPageWidget> {
                   children: [
                     FFButtonWidget(
                       onPressed: () {
-                        print('Button pressed ...');
+                        _model.timerController.onStartTimer();
+
                       },
                       text: 'Start',
                       options: FFButtonOptions(

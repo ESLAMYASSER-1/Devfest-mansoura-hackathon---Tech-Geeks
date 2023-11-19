@@ -78,19 +78,19 @@ class _AddTaskPageWidgetState extends State<AddTaskPageWidget> {
                 context.pop();
               },
             ),
-            actions: [],
-            flexibleSpace: FlexibleSpaceBar(
-              title: Text(
-                'ADD Task',
+            title: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+              child: Text(
+                'TASKS List',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily: 'Outfit',
-                      color: Colors.white,
-                      fontSize: 22.0,
-                    ),
+                  fontFamily: 'Outfit',
+                  color: Colors.white,
+                  fontSize: 22.0,
+                ),
               ),
-              centerTitle: true,
-              expandedTitleScale: 1.0,
             ),
+            actions: [],
+
             elevation: 2.0,
           ),
         ),

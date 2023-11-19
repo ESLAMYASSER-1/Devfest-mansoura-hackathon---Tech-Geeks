@@ -123,7 +123,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             buttonSize: 0.0,
                             fillColor: FlutterFlowTheme.of(context).accent1,
                             icon: Icon(
-                              Icons.list_alt_outlined,
+                              Icons.list_alt,
                               color: FlutterFlowTheme.of(context).primaryText,
                               size: 70.0,
                             ),

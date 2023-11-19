@@ -15,7 +15,8 @@ class TimerPageModel extends FlutterFlowModel<TimerPageWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for Timer widget.
-  int timerMilliseconds = 300000;
+   var timerMilliseconds = 300000;
+
   String timerValue = StopWatchTimer.getDisplayTime(
     300000,
     hours: false,

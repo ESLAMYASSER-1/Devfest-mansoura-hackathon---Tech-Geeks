@@ -1,21 +1,28 @@
 import 'dart:async';
 
+
 import 'package:flutter/material.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 
 // Simple wrapper around StopWatchTimer that emits notifications on events.
 class FlutterFlowTimerController with ChangeNotifier {
   final StopWatchTimer timer;
+  // Function to stop the timer and show a confirmation dialog
+
 
   FlutterFlowTimerController(this.timer);
 
   void onStartTimer() {
     timer.onStartTimer();
+
     notifyListeners();
   }
 
+
+
   void onStopTimer() {
     timer.onStopTimer();
+
     notifyListeners();
   }
 
@@ -38,6 +45,7 @@ class FlutterFlowTimerController with ChangeNotifier {
 }
 
 class FlutterFlowTimer extends StatefulWidget {
+
   const FlutterFlowTimer({
     Key? key,
     required this.initialTime,
