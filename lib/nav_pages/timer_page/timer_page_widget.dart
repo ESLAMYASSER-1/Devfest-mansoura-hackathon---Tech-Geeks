@@ -172,10 +172,11 @@ class _TimerPageWidgetState extends State<TimerPageWidget> {
                       if (confirmDialogResponse) {
                         // Execute this block if the user response is true (YES)
                         print("yes");
-                        initialTime: _model.timerMilliseconds;
+                        _model.timerMilliseconds = 480000; // 8 minutes in milliseconds
                         _model.timerController.onResetTimer();
+                        //_model.timerController.setPresetTime(mSec: 480000);
                         _model.timerController.onStartTimer();
-                        yesCount= yesCount+1;
+                        yesCount++;
                       } else {
                         // Execute this block if the user response is false (NO)
                         print("NO");
